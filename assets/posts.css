@@ -1,0 +1,38 @@
+[hidden] { display: none !important; }
+.news-section { background: #f0f4eb; }
+.post-list { display: grid; gap: 28px; max-width: 900px; margin: 0 auto 28px; }
+.post-card { background: white; padding: clamp(20px, 4vw, 36px); border-radius: var(--radius); box-shadow: var(--shadow); overflow-wrap: anywhere; }
+.post-card h3 { font-size: 1.6rem; line-height: 1.3; margin: 8px 0 18px; }
+.post-card time { color: #526e60; font-size: 0.95rem; }
+.post-body { white-space: pre-wrap; }
+.post-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+.post-photos img { height: auto; max-height: 480px; object-fit: contain; background: #f6f8f2; border-radius: 12px; }
+.post-photos a:only-child { grid-column: 1 / -1; }
+.status { max-width: 900px; margin: 16px auto; overflow-wrap: anywhere; }
+.status.error { color: #8d2929; }
+#news-more { display: block; margin: 20px auto 0; }
+.admin-main { max-width: 1000px; margin: auto; padding: 48px 20px 80px; }
+.admin-main h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+.admin-main h2 { font-size: 1.5rem; margin-bottom: 16px; }
+.admin-card { padding: clamp(20px, 4vw, 36px); margin: 24px 0; background: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+.login-card { max-width: 500px; }
+.admin-form { display: grid; gap: 18px; }
+.admin-form label { display: block; font-weight: 600; margin-bottom: 6px; }
+.admin-form input, .admin-form textarea { width: 100%; border: 1px solid #9bab9e; border-radius: 10px; padding: 12px 14px; font: inherit; color: var(--dark); background: white; }
+.admin-form textarea { resize: vertical; min-height: 200px; }
+.admin-form input:focus-visible, .admin-form textarea:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.admin-form small { display: block; font-size: 0.9rem; margin-top: 6px; }
+.admin-form fieldset { border: 0; min-width: 0; display: grid; gap: 18px; }
+.admin-form button { justify-self: start; }
+button:disabled { opacity: 0.6; cursor: wait; }
+.admin-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.photo-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+.photo-preview img { height: 160px; object-fit: contain; border-radius: 10px; background: var(--light); }
+.admin-help { color: #526e60; }
+@media (max-width: 550px) {
+  .post-photos { grid-template-columns: 1fr; }
+  .admin-main { padding-top: 30px; }
+  .admin-toolbar .button { padding: 10px 16px; }
+}
+
+.admin-navigation { flex-wrap: wrap; }

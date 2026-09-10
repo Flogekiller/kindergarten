@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · Kindergarten Mettmach</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/posts.css">
+</head>
+<body>
+  <header>
+    <nav class="nav admin-navigation" aria-label="Admin-Navigation">
+      <a href="index.html" class="logo" aria-label="Kindergarten Mettmach – Startseite">
+        <img src="Logo_Kindergarten_Mettmach_Neu_bearbeitet.webp" width="284" height="200" alt="">
+        <span class="logo-name"><span>Kindergarten</span><strong>Mettmach</strong></span>
+      </a>
+      <a href="index.html#aktuelles">Zur Website</a>
+    </nav>
+  </header>
+  <main class="admin-main">
+    <h1>Beiträge verwalten</h1>
+    <p>Fotos und Geschichten aus dem Kindergarten teilen.</p>
+    <p id="admin-status" class="status" role="status" aria-live="polite">Anmeldung wird geprüft …</p>
+    <noscript>Bitte JavaScript aktivieren, um dich anzumelden und Beiträge zu erstellen.</noscript>
+
+    <section id="login-panel" class="admin-card login-card" hidden>
+      <h2>Anmelden</h2>
+      <form id="login-form" class="admin-form">
+        <fieldset id="login-fields">
+          <div><label for="email">E-Mail-Adresse</label><input id="email" type="email" autocomplete="username" required></div>
+          <div><label for="password">Passwort</label><input id="password" type="password" autocomplete="current-password" required></div>
+          <button type="submit" class="button button-primary">Anmelden</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <div id="editor-panel" hidden>
+      <div class="admin-toolbar">
+        <p>Angemeldet als <strong id="admin-email"></strong></p>
+        <button id="logout" type="button" class="button button-secondary">Abmelden</button>
+      </div>
+      <section class="admin-card">
+        <h2>Neuer Beitrag</h2>
+        <form id="post-form" class="admin-form">
+          <fieldset id="post-fields">
+            <div><label for="post-title">Titel</label><input id="post-title" maxlength="160" required placeholder="Zum Beispiel: Unser Ausflug in den Wald"></div>
+            <div><label for="post-body">Text</label><textarea id="post-body" maxlength="10000" required placeholder="Was habt ihr gemeinsam erlebt?"></textarea></div>
+            <div>
+              <label for="post-photos">Fotos hinzufügen</label>
+              <input id="post-photos" type="file" accept="image/jpeg,image/png,image/webp" multiple aria-describedby="photo-help">
+              <small id="photo-help">Optional: bis zu 5 Fotos als JPG, PNG oder WebP, jeweils höchstens 5 MB. Die Fotos und der Text werden öffentlich auf der Website angezeigt.</small>
+            </div>
+            <div id="photo-preview" class="photo-preview" aria-label="Ausgewählte Fotos"></div>
+            <button id="publish" type="submit" class="button button-primary">Beitrag veröffentlichen</button>
+          </fieldset>
+          <p id="publish-status" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="admin-card">
+        <h2>Veröffentlichte Beiträge</h2>
+        <p id="admin-posts-status" class="status" role="status"></p>
+        <div id="admin-posts" class="post-list"></div>
+        <a href="index.html#aktuelles">Alle Beiträge auf der Website ansehen</a>
+      </section>
+    </div>
+  </main>
+  <script src="assets/vendor/supabase-2.116.0.js"></script>
+  <script type="module" src="assets/admin.js"></script>
+</body>
+</html>
