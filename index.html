@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kinderhaus Sonnenschein</title>
+  <title>Kindergarten der Marktgemeinde Mettmach</title>
+  <meta name="description" content="Kindergarten der Marktgemeinde Mettmach, Schulstraße 14, 4931 Mettmach. Kontakt und Terminanfragen unter +43 7755 7447.">
 
   <style>
     :root {
@@ -68,20 +69,30 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: var(--primary);
+      flex-shrink: 0;
     }
 
-    .logo-icon {
-      width: 45px;
-      height: 45px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--yellow);
-      font-size: 1.5rem;
+    .logo img {
+      width: 170px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .footer-logo {
+      width: 170px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    section[id] { scroll-margin-top: 160px; }
+    address { font-style: normal; }
+    .contact-box a:not(.button) { text-decoration: underline; }
+    .contact-callout { align-self: start; padding: 32px; }
+    .contact-callout p { margin-bottom: 20px; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--dark);
+      outline-offset: 4px;
     }
 
     .nav-links {
@@ -445,31 +456,6 @@
       margin-bottom: 5px;
     }
 
-    form {
-      display: grid;
-      gap: 15px;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 15px 18px;
-      border: 2px solid #eee;
-      border-radius: 14px;
-      font: inherit;
-      outline: none;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: var(--secondary);
-    }
-
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
     /* Footer */
     footer {
       background: var(--dark);
@@ -546,7 +532,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 75px;
+        top: 100%;
         background: white;
         flex-direction: column;
         padding: 25px;
@@ -605,11 +591,10 @@
   <header>
     <nav class="nav">
       <a href="#start" class="logo">
-        <span class="logo-icon">☀️</span>
-        Kinderhaus Sonnenschein
+        <img src="Logo_Kindergarten_Mettmach_Neu_bearbeitet.webp" width="284" height="200" alt="Kindergarten der Marktgemeinde Mettmach – Startseite">
       </a>
 
-      <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
+      <button class="menu-button" id="menuButton" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
         ☰
       </button>
 
@@ -638,7 +623,7 @@
           </h1>
 
           <p>
-            Willkommen im Kinderhaus Sonnenschein – einem liebevollen Ort,
+            Willkommen im Kindergarten der Marktgemeinde Mettmach – einem liebevollen Ort,
             an dem Kinder ihre Welt entdecken, Freundschaften schließen
             und mit Freude lernen.
           </p>
@@ -674,8 +659,7 @@
             <h3>Ein Ort zum Wohlfühlen</h3>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Unser Kindergarten bietet Kindern einen geschützten Raum,
+              Unser Kindergarten in der Schulstraße 14 in Mettmach bietet Kindern einen geschützten Raum,
               in dem sie sich frei entfalten und ihre eigenen Fähigkeiten
               entdecken können.
             </p>
@@ -890,7 +874,7 @@
 
         <div class="section-heading">
           <span>Unser Team</span>
-          <h2>Die Menschen hinter dem Kinderhaus</h2>
+          <h2>Die Menschen hinter dem Kindergarten</h2>
           <p>
             Platzhalter für euer Team.
           </p>
@@ -939,7 +923,7 @@
         <h2>Ihr möchtet uns kennenlernen?</h2>
         <p>
           Vereinbart gerne einen persönlichen Termin und lernt unser
-          Kinderhaus, unser Team und unsere Räumlichkeiten kennen.
+          Kindergarten, unser Team und unsere Räumlichkeiten kennen.
         </p>
         <a href="#kontakt" class="button">
           Termin anfragen
@@ -956,8 +940,8 @@
           <span>Kontakt</span>
           <h2>Wir freuen uns auf euch!</h2>
           <p>
-            Die folgenden Daten sind Platzhalter und können einfach
-            ausgetauscht werden.
+            Bei Fragen zu unserem Kindergarten oder für eine Terminanfrage
+            erreicht ihr uns telefonisch.
           </p>
         </div>
 
@@ -967,65 +951,21 @@
 
             <div class="contact-box">
               <h3>📍 Adresse</h3>
-              <p>Musterstraße 12<br>12345 Musterstadt</p>
+              <address>Kindergarten der Marktgemeinde Mettmach<br>Schulstraße 14<br>4931 Mettmach</address>
             </div>
 
             <div class="contact-box">
               <h3>📞 Telefon</h3>
-              <p>+43 123 456789</p>
-            </div>
-
-            <div class="contact-box">
-              <h3>✉️ E-Mail</h3>
-              <p>hallo@kinderhaus-sonnenschein.at</p>
-            </div>
-
-            <div class="contact-box">
-              <h3>🕐 Öffnungszeiten</h3>
-              <p>
-                Montag – Freitag<br>
-                07:00 – 16:00 Uhr
-              </p>
+              <p><a href="tel:+4377557447">+43 7755 7447</a></p>
             </div>
 
           </div>
 
-          <form id="contactForm">
-
-            <input
-              type="text"
-              id="name"
-              placeholder="Ihr Name"
-              required
-            >
-
-            <input
-              type="email"
-              id="email"
-              placeholder="Ihre E-Mail-Adresse"
-              required
-            >
-
-            <input
-              type="text"
-              id="subject"
-              placeholder="Betreff"
-              required
-            >
-
-            <textarea
-              id="message"
-              placeholder="Ihre Nachricht"
-              required
-            ></textarea>
-
-            <button type="submit" class="button button-primary">
-              Nachricht senden
-            </button>
-
-            <p id="formMessage"></p>
-
-          </form>
+          <div class="contact-box contact-callout">
+            <h3>Persönlich in Kontakt kommen</h3>
+            <p>Ihr möchtet uns kennenlernen oder habt Fragen zur Anmeldung und zu den Öffnungszeiten? Ruft uns gerne an.</p>
+            <a href="tel:+4377557447" class="button button-primary">+43 7755 7447 anrufen</a>
+          </div>
 
         </div>
       </div>
@@ -1039,8 +979,9 @@
     <div class="footer-inner">
 
       <div>
-        <strong>☀️ Kinderhaus Sonnenschein</strong>
-        <p>Gemeinsam wachsen und entdecken.</p>
+        <img class="footer-logo" src="Logo_Kindergarten_Mettmach_Neu_bearbeitet.webp" width="284" height="200" alt="Logo Kindergarten und Krabbelgruppe Mettmach" loading="lazy">
+        <strong>Kindergarten der Marktgemeinde Mettmach</strong>
+        <address>Schulstraße 14 · 4931 Mettmach<br><a href="tel:+4377557447">Tel: +43 7755 7447</a></address>
       </div>
 
       <div>
@@ -1049,7 +990,7 @@
       </div>
 
       <div>
-        © <span id="year"></span> Kinderhaus Sonnenschein
+        © <span id="year"></span> Kindergarten der Marktgemeinde Mettmach
       </div>
 
     </div>
@@ -1071,13 +1012,17 @@
     const navLinks = document.getElementById("navLinks");
 
     menuButton.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+      const isOpen = navLinks.classList.toggle("active");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
     });
 
     // Navigation nach Klick schließen
     document.querySelectorAll(".nav-links a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Menü öffnen");
       });
     });
 
@@ -1085,25 +1030,6 @@
     // Aktuelles Jahr im Footer
     document.getElementById("year").textContent =
       new Date().getFullYear();
-
-
-    // Kontaktformular
-    const contactForm = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
-
-    contactForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-
-      formMessage.textContent =
-        `Vielen Dank, ${name}! Ihre Nachricht wurde als Demo erfasst.`;
-
-      formMessage.style.color = "#4caf50";
-      formMessage.style.fontWeight = "bold";
-
-      contactForm.reset();
-    });
 
 
     // Galerie-Modal
