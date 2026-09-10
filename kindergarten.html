@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinderhaus Sonnenschein</title>
+
+  <style>
+    :root {
+      --primary: #ff9f68;
+      --secondary: #6ec6ca;
+      --yellow: #ffd966;
+      --green: #8bcf8b;
+      --dark: #344054;
+      --light: #fffaf5;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(52, 64, 84, 0.1);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--yellow);
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-button {
+      display: none;
+      border: none;
+      background: var(--primary);
+      color: white;
+      padding: 10px 13px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(255,250,245,0.97) 0%, rgba(255,250,245,0.8) 45%, rgba(255,250,245,0.1) 100%),
+        url("https://picsum.photos/seed/kindergarten/1600/900") center/cover;
+    }
+
+    .hero-content {
+      width: min(1200px, 100%);
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #fff1df;
+      color: #d97735;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 550px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .button-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* General sections */
+    section {
+      padding: 90px 25px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 10px 0 15px;
+    }
+
+    /* About */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 450px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      height: 100%;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      margin-bottom: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .check {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    /* Features */
+    .features {
+      background: #fff5e9;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 35px 28px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+    }
+
+    .orange { background: #ffe1cc; }
+    .blue { background: #d8f4f4; }
+    .green { background: #def4de; }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    /* Tagesablauf */
+    .schedule {
+      background: white;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 25px;
+      padding: 22px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .time {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 4px;
+    }
+
+    /* Gallery */
+    .gallery {
+      background: #eefafa;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 230px;
+      overflow: hidden;
+      border-radius: 18px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    /* Team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .team-card img {
+      height: 280px;
+    }
+
+    .team-info {
+      padding: 22px;
+    }
+
+    .team-info h3 {
+      margin-bottom: 5px;
+    }
+
+    .team-info span {
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .cta .button {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* Contact */
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 20px;
+    }
+
+    .contact-box {
+      padding: 22px;
+      border-radius: 18px;
+      background: #fff8f1;
+    }
+
+    .contact-box h3 {
+      margin-bottom: 5px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 15px 18px;
+      border: 2px solid #eee;
+      border-radius: 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--secondary);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #ddd;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+    }
+
+    .modal-content img {
+      max-height: 80vh;
+      border-radius: 15px;
+    }
+
+    .close-modal {
+      position: absolute;
+      right: -10px;
+      top: -45px;
+      border: none;
+      background: white;
+      color: var(--dark);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 75px;
+        background: white;
+        flex-direction: column;
+        padding: 25px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+      section {
+        padding: 65px 18px;
+      }
+
+      .feature-grid,
+      .team-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 85px 1fr;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .nav {
+        padding: 12px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="nav">
+      <a href="#start" class="logo">
+        <span class="logo-icon">☀️</span>
+        Kinderhaus Sonnenschein
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#paedagogik">Pädagogik</a></li>
+        <li><a href="#tagesablauf">Tagesablauf</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Hero -->
+  <main id="start">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="badge">♥ Herzlich willkommen</span>
+
+          <h1>
+            Gemeinsam wachsen,
+            <span style="color: var(--primary);">spielen & entdecken.</span>
+          </h1>
+
+          <p>
+            Willkommen im Kinderhaus Sonnenschein – einem liebevollen Ort,
+            an dem Kinder ihre Welt entdecken, Freundschaften schließen
+            und mit Freude lernen.
+          </p>
+
+          <div class="buttons">
+            <a href="#kontakt" class="button button-primary">
+              Kontakt aufnehmen
+            </a>
+            <a href="#ueber-uns" class="button button-secondary">
+              Mehr erfahren
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Über uns -->
+    <section class="about" id="ueber-uns">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-image">
+            <img
+              src="https://picsum.photos/seed/children-playing/800/800"
+              alt="Kinder beim Spielen"
+            >
+          </div>
+
+          <div class="about-text">
+            <span class="badge">Über unseren Kindergarten</span>
+
+            <h3>Ein Ort zum Wohlfühlen</h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Unser Kindergarten bietet Kindern einen geschützten Raum,
+              in dem sie sich frei entfalten und ihre eigenen Fähigkeiten
+              entdecken können.
+            </p>
+
+            <p>
+              Gemeinsam mit Familien schaffen wir eine Umgebung voller
+              Vertrauen, Kreativität und gemeinsamer Erlebnisse.
+            </p>
+
+            <ul class="check-list">
+              <li>
+                <span class="check">✓</span>
+                Liebevolle und individuelle Betreuung
+              </li>
+              <li>
+                <span class="check">✓</span>
+                Große Räume und abwechslungsreiche Spielbereiche
+              </li>
+              <li>
+                <span class="check">✓</span>
+                Viel Bewegung und Zeit in der Natur
+              </li>
+              <li>
+                <span class="check">✓</span>
+                Enge Zusammenarbeit mit den Familien
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Pädagogik -->
+    <section class="features" id="paedagogik">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>Unsere Pädagogik</span>
+          <h2>Was uns wichtig ist</h2>
+          <p>
+            Platzhaltertext für eure pädagogischen Schwerpunkte.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="feature-card">
+            <div class="feature-icon orange">🎨</div>
+            <h3>Kreativität</h3>
+            <p>
+              Kinder dürfen malen, basteln, musizieren und eigene Ideen
+              entwickeln.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon blue">🌱</div>
+            <h3>Natur erleben</h3>
+            <p>
+              Wir verbringen viel Zeit draußen und entdecken gemeinsam
+              die Natur.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon green">🤝</div>
+            <h3>Gemeinschaft</h3>
+            <p>
+              Respekt, gegenseitige Unterstützung und Zusammenhalt stehen
+              bei uns im Mittelpunkt.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Tagesablauf -->
+    <section class="schedule" id="tagesablauf">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>Unser Alltag</span>
+          <h2>Ein typischer Kindergartentag</h2>
+          <p>
+            Beispielhafter Tagesablauf – Zeiten und Inhalte können
+            individuell angepasst werden.
+          </p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="time">07:00</div>
+            <div>
+              <h3>Ankommen</h3>
+              <p>Die Kinder kommen an und starten gemeinsam in den Tag.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">08:30</div>
+            <div>
+              <h3>Freies Spiel</h3>
+              <p>Zeit zum Spielen, Entdecken und für eigene Projekte.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">09:30</div>
+            <div>
+              <h3>Gemeinsame Jause</h3>
+              <p>Wir essen gemeinsam und tauschen uns über den Vormittag aus.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">10:00</div>
+            <div>
+              <h3>Draußen unterwegs</h3>
+              <p>Garten, Spaziergang oder ein spannendes Naturprojekt.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">12:00</div>
+            <div>
+              <h3>Mittagessen</h3>
+              <p>Ein gemeinsames Mittagessen in gemütlicher Atmosphäre.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="time">13:00</div>
+            <div>
+              <h3>Ruhe & Ausklang</h3>
+              <p>Ruhige Aktivitäten und Zeit für Erholung.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Galerie -->
+    <section class="gallery" id="galerie">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>Unsere Galerie</span>
+          <h2>Ein kleiner Einblick</h2>
+          <p>
+            Platzhalterbilder – hier könnt ihr später eure eigenen
+            Kindergartenfotos einsetzen.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids1/800/600"
+                 alt="Platzhalterbild 1">
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids2/800/600"
+                 alt="Platzhalterbild 2">
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids3/800/600"
+                 alt="Platzhalterbild 3">
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids4/800/600"
+                 alt="Platzhalterbild 4">
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids5/800/600"
+                 alt="Platzhalterbild 5">
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids6/800/600"
+                 alt="Platzhalterbild 6">
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids7/800/600"
+                 alt="Platzhalterbild 7">
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://picsum.photos/seed/kids8/800/600"
+                 alt="Platzhalterbild 8">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Team -->
+    <section id="team">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>Unser Team</span>
+          <h2>Die Menschen hinter dem Kinderhaus</h2>
+          <p>
+            Platzhalter für euer Team.
+          </p>
+        </div>
+
+        <div class="team-grid">
+
+          <article class="team-card">
+            <img src="https://picsum.photos/seed/person1/600/700"
+                 alt="Teammitglied">
+            <div class="team-info">
+              <h3>Anna Beispiel</h3>
+              <span>Kindergartenleitung</span>
+              <p>„Platzhalter für ein persönliches Zitat.“</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="https://picsum.photos/seed/person2/600/700"
+                 alt="Teammitglied">
+            <div class="team-info">
+              <h3>Max Muster</h3>
+              <span>Pädagogische Fachkraft</span>
+              <p>„Platzhalter für ein persönliches Zitat.“</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="https://picsum.photos/seed/person3/600/700"
+                 alt="Teammitglied">
+            <div class="team-info">
+              <h3>Lisa Beispiel</h3>
+              <span>Pädagogische Fachkraft</span>
+              <p>„Platzhalter für ein persönliches Zitat.“</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2>Ihr möchtet uns kennenlernen?</h2>
+        <p>
+          Vereinbart gerne einen persönlichen Termin und lernt unser
+          Kinderhaus, unser Team und unsere Räumlichkeiten kennen.
+        </p>
+        <a href="#kontakt" class="button">
+          Termin anfragen
+        </a>
+      </div>
+    </section>
+
+
+    <!-- Kontakt -->
+    <section class="contact" id="kontakt">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>Kontakt</span>
+          <h2>Wir freuen uns auf euch!</h2>
+          <p>
+            Die folgenden Daten sind Platzhalter und können einfach
+            ausgetauscht werden.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-info">
+
+            <div class="contact-box">
+              <h3>📍 Adresse</h3>
+              <p>Musterstraße 12<br>12345 Musterstadt</p>
+            </div>
+
+            <div class="contact-box">
+              <h3>📞 Telefon</h3>
+              <p>+43 123 456789</p>
+            </div>
+
+            <div class="contact-box">
+              <h3>✉️ E-Mail</h3>
+              <p>hallo@kinderhaus-sonnenschein.at</p>
+            </div>
+
+            <div class="contact-box">
+              <h3>🕐 Öffnungszeiten</h3>
+              <p>
+                Montag – Freitag<br>
+                07:00 – 16:00 Uhr
+              </p>
+            </div>
+
+          </div>
+
+          <form id="contactForm">
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Ihr Name"
+              required
+            >
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Ihre E-Mail-Adresse"
+              required
+            >
+
+            <input
+              type="text"
+              id="subject"
+              placeholder="Betreff"
+              required
+            >
+
+            <textarea
+              id="message"
+              placeholder="Ihre Nachricht"
+              required
+            ></textarea>
+
+            <button type="submit" class="button button-primary">
+              Nachricht senden
+            </button>
+
+            <p id="formMessage"></p>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <strong>☀️ Kinderhaus Sonnenschein</strong>
+        <p>Gemeinsam wachsen und entdecken.</p>
+      </div>
+
+      <div>
+        <a href="#">Impressum</a> ·
+        <a href="#">Datenschutz</a>
+      </div>
+
+      <div>
+        © <span id="year"></span> Kinderhaus Sonnenschein
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Bild-Modal -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">×</button>
+      <img id="modalImage" src="" alt="Vergrößertes Bild">
+    </div>
+  </div>
+
+
+  <script>
+    // Mobile Navigation
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Navigation nach Klick schließen
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+
+    // Aktuelles Jahr im Footer
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // Kontaktformular
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+
+      formMessage.textContent =
+        `Vielen Dank, ${name}! Ihre Nachricht wurde als Demo erfasst.`;
+
+      formMessage.style.color = "#4caf50";
+      formMessage.style.fontWeight = "bold";
+
+      contactForm.reset();
+    });
+
+
+    // Galerie-Modal
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll(".gallery-item img").forEach(image => {
+      image.addEventListener("click", () => {
+        modalImage.src = image.src;
+        modal.classList.add("active");
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+
+    // ESC zum Schließen des Modals
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        modal.classList.remove("active");
+      }
+    });
+  </script>
+
+</body>
+</html>
