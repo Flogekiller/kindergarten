@@ -30,6 +30,7 @@
         <li><a href="#tagesablauf">Tagesablauf</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#aktuelles">Aktuelles</a></li>
+        <li><a href="#dokumente">Dokumente</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
@@ -87,8 +88,9 @@
 
           <div class="about-image">
             <img
-              src="https://picsum.photos/seed/children-playing/800/800"
-              alt="Kinder beim Spielen"
+              src="Neubau%201.jpg.webp"
+              alt="Heller Gruppenraum im Neubau mit Spielbereichen und großen Fenstern"
+              width="1380" height="920" loading="lazy"
             >
           </div>
 
@@ -238,7 +240,7 @@
             <div class="time">13:00</div>
             <div>
               <h3>Ruhe & Ausklang</h3>
-              <p>Ruhige Aktivitäten und Zeit für Erholung.</p>
+              <p>Montag bis Donnerstag: ruhige Aktivitäten und Zeit für Erholung. Am Freitag endet der Kindergartentag um 13:00 Uhr.</p>
             </div>
           </div>
 
@@ -253,55 +255,41 @@
 
         <div class="section-heading">
           <span>Unsere Galerie</span>
-          <h2>Ein kleiner Einblick</h2>
-          <p>
-            Platzhalterbilder – hier könnt ihr später eure eigenen
-            Kindergartenfotos einsetzen.
-          </p>
+          <h2>Einblicke in unseren Neubau</h2>
+          <p>Helle Räume, Platz für Bewegung und ein Garten zum Entdecken.</p>
         </div>
 
         <div class="gallery-grid">
+          <button class="gallery-item" type="button" aria-label="Neubau mit Garten vergrößern">
+            <img src="Neubau%203.jpg" width="1958" height="1304" loading="lazy"
+                 alt="Neubau des Kindergartens mit Garten, Sandspielbereichen und Schaukeln">
+            <span>Unser Neubau & Garten</span>
+          </button>
+          <button class="gallery-item" type="button" aria-label="Gruppenraum vergrößern">
+            <img src="Neubau%201.jpg.webp" width="1380" height="920" loading="lazy"
+                 alt="Gruppenraum mit großen Fenstern, Kindertischen und Spielküche">
+            <span>Raum zum Spielen & Entdecken</span>
+          </button>
+          <button class="gallery-item" type="button" aria-label="Bewegungsraum vergrößern">
+            <img src="Neubau%202.jpg.webp" width="1200" height="800" loading="lazy"
+                 alt="Bewegungsraum mit Schaukel, Kletterwand und bunten Turnelementen">
+            <span>Platz für Bewegung</span>
+          </button>
+        </div>
+      </div>
+    </section>
 
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids1/800/600"
-                 alt="Platzhalterbild 1">
-          </div>
-
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids2/800/600"
-                 alt="Platzhalterbild 2">
-          </div>
-
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids3/800/600"
-                 alt="Platzhalterbild 3">
-          </div>
-
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids4/800/600"
-                 alt="Platzhalterbild 4">
-          </div>
-
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids5/800/600"
-                 alt="Platzhalterbild 5">
-          </div>
-
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids6/800/600"
-                 alt="Platzhalterbild 6">
-          </div>
-
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids7/800/600"
-                 alt="Platzhalterbild 7">
-          </div>
-
-          <div class="gallery-item">
-            <img src="https://picsum.photos/seed/kids8/800/600"
-                 alt="Platzhalterbild 8">
-          </div>
-
+    <!-- Dokumente -->
+    <section class="documents" id="dokumente">
+      <div class="container">
+        <div class="section-heading">
+          <span>Dokumente</span>
+          <h2>Informationen zum Download</h2>
+          <p>Aktuell stehen noch keine Dokumente zum Download bereit.</p>
+        </div>
+        <div class="documents-info">
+          <p>Ihr benötigt Unterlagen oder habt Fragen zur Anmeldung? Meldet euch gerne bei uns.</p>
+          <a href="#kontakt" class="button button-primary">Kontakt aufnehmen</a>
         </div>
       </div>
     </section>
@@ -400,10 +388,24 @@
 
           </div>
 
+          <div class="contact-info">
+            <div class="contact-box" id="oeffnungszeiten">
+              <h3 id="hours-heading">Öffnungszeiten</h3>
+              <table class="opening-hours" aria-labelledby="hours-heading">
+                <tbody>
+                  <tr><th scope="row">Montag</th><td>07:00 - 16:00 Uhr</td></tr>
+                  <tr><th scope="row">Dienstag</th><td>07:00 - 16:00 Uhr</td></tr>
+                  <tr><th scope="row">Mittwoch</th><td>07:00 - 16:00 Uhr</td></tr>
+                  <tr><th scope="row">Donnerstag</th><td>07:00 - 16:00 Uhr</td></tr>
+                  <tr><th scope="row">Freitag</th><td>07:00 - 13:00 Uhr</td></tr>
+                </tbody>
+              </table>
+            </div>
           <div class="contact-box contact-callout">
             <h3>Persönlich in Kontakt kommen</h3>
             <p>Ihr möchtet uns kennenlernen oder habt Fragen zur Anmeldung und zu den Öffnungszeiten? Ruft uns gerne an.</p>
             <a href="tel:+4377557447" class="button button-primary">+43 7755 7447 anrufen</a>
+          </div>
           </div>
 
         </div>
@@ -438,9 +440,9 @@
 
 
   <!-- Bild-Modal -->
-  <div class="modal" id="imageModal">
+  <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Bilder aus unserem Neubau" tabindex="-1">
     <div class="modal-content">
-      <button class="close-modal" id="closeModal">×</button>
+      <button class="close-modal" id="closeModal" aria-label="Bild schließen">×</button>
       <img id="modalImage" src="" alt="Vergrößertes Bild">
     </div>
   </div>
@@ -477,29 +479,39 @@
     const modalImage = document.getElementById("modalImage");
     const closeModal = document.getElementById("closeModal");
 
-    document.querySelectorAll(".gallery-item img").forEach(image => {
-      image.addEventListener("click", () => {
+    let galleryTrigger;
+
+    document.querySelectorAll(".gallery-item").forEach(button => {
+      button.addEventListener("click", () => {
+        const image = button.querySelector("img");
+        galleryTrigger = button;
         modalImage.src = image.src;
+        modalImage.alt = image.alt;
         modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        closeModal.focus();
       });
     });
 
-    closeModal.addEventListener("click", () => {
+    function closeGallery() {
       modal.classList.remove("active");
-    });
+      document.body.style.overflow = "";
+      galleryTrigger?.focus();
+    }
 
+    closeModal.addEventListener("click", closeGallery);
     modal.addEventListener("click", event => {
-      if (event.target === modal) {
-        modal.classList.remove("active");
+      if (event.target === modal) closeGallery();
+    });
+    document.addEventListener("keydown", event => {
+      if (!modal.classList.contains("active")) return;
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "Tab") {
+        event.preventDefault();
+        closeModal.focus();
       }
     });
 
-    // ESC zum Schließen des Modals
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
-        modal.classList.remove("active");
-      }
-    });
   </script>
 
   <script src="assets/vendor/supabase-2.116.0.js"></script>
